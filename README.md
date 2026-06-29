@@ -47,6 +47,7 @@ I then brainstormed potential classes and relations that would need to be create
 - Course Requirement
 - taughtBy
 - satisfiesCourseDistributionRequirement
+
 I also brainstormed the BFO/CCO classes that I could categorize these classes under.
 See the .xlsx file labeled "UMass Ontology Planning and Data", tab "Competency Questions", for more details.
 
