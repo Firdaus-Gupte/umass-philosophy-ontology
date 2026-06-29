@@ -16,30 +16,30 @@ I started this project with the goal that the finished project should be able to
 I broke those questions down into the following, more specific competency questions:
 
 1) Which philosophy courses are being offered in a specified term at UMass Amherst?
-   a) Which Philosophy courses are offered in Fall 2026?
-   b) Which Philosophy courses offered in Fall 2026 are online?
-   c) Which Philosophy courses offered in Fall 2026 are in person?
+   - Which Philosophy courses are offered in Fall 2026?
+   - Which Philosophy courses offered in Fall 2026 are online?
+   - Which Philosophy courses offered in Fall 2026 are in person?
 2) Which philosophy courses satisfy major distribution requirements?
-   a) Which courses offered in a specified academic term satisfy the value-theory requirement?
-   b) Which courses offered in a specified academic term satisfy the logic requirement?
-   c) Which courses offered in a specified academic term satisfy the ancient and medieval history requirement?
-   d) Which courses offered in a specified academic term satisfy the 17th and 18th century history requirement?
-   e) Which courses offered in a specified academic term satisfy the metaphysics and epistemology requirement?
-   f) Which courses in a specified semester are upper-division courses?
-   g) Which courses in a specified semester are lower-division courses?
+   - Which courses offered in a specified academic term satisfy the value-theory requirement?
+   - Which courses offered in a specified academic term satisfy the logic requirement?
+   - Which courses offered in a specified academic term satisfy the ancient and medieval history requirement?
+   - Which courses offered in a specified academic term satisfy the 17th and 18th century history requirement?
+   - Which courses offered in a specified academic term satisfy the metaphysics and epistemology requirement?
+   - Which courses in a specified semester are upper-division courses?
+   - Which courses in a specified semester are lower-division courses?
 3) What kind of teaching experience do instructors have?
-   a) Which instructors have taught philosophy courses?
-   b) Which instructors have taught logic courses, and how many?
-   c) Which instructors have taught ancient and medieval history courses, and how many?
-   d) Which instructors have taught 17th and 18th-century history courses, and how many?
-   e) Which instructors have taught metaphysics and epistemology courses, and how many?
-   f) Which instructors have taught upper-division courses, and how many?
-   g) Which instructors have taught lower-division courses, and how many?'
-   h) How many experienced instructors do we have at UMass?
+   - Which instructors have taught philosophy courses?
+   - Which instructors have taught logic courses, and how many?
+   - Which instructors have taught ancient and medieval history courses, and how many?
+   - Which instructors have taught 17th and 18th-century history courses, and how many?
+   - Which instructors have taught metaphysics and epistemology courses, and how many?
+   - Which instructors have taught upper-division courses, and how many?
+   - Which instructors have taught lower-division courses, and how many?'
+   - How many experienced instructors do we have at UMass?
 4) Are there enough courses being offered in Fall 2026, and of all the right kinds?
-   a) Does each major distribution requirement area have at least one course offered in a specified academic term?
-   b) Which distribution requirement area has no Fall 2026 course offerings?
-   c) How many Fall 2026 course offerings satisfy each major distribution area?
+   - Does each major distribution requirement area have at least one course offered in a specified academic term?
+   - Which distribution requirement area has no Fall 2026 course offerings?
+   - How many Fall 2026 course offerings satisfy each major distribution area?
 
 I then brainstormed potential classes and relations that would need to be created when building the ontology on top of BFO. These included:
 - Course
