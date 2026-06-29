@@ -1,4 +1,4 @@
-# UMass Philosophy Ontology
+# UMass Philosophy Course Ontology
 This project is an applied ontology project of the UMass Philosophy Course curriculum over the last five years. It models philosophy courses, course offerings, academic terms, course levels, and distribution requirements. It is built on top of Basic Formal Ontology (BFO) and Common Core Ontology (CCO).
 
 I made this project as a way to learn more about applied ontology. I practiced modeling domains with competency questions, RDF/OWL and Protege, using Cellfie and ROBOT to import data into Protege, and writing SPARQL queries.
