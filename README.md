@@ -9,7 +9,7 @@ See the .xlsx file labeled "UMass Ontology Planning and Data" for more details.
 I started this project with the goal that the finished project should be able to answer certain domain-specific questions (DSQs).
 
 1) Which philosophy courses are being offered in a specified term at UMass Amherst?
-2) Which philosophy courses satisfying major distribution requirements?
+2) Which philosophy courses satisfy major distribution requirements?
 3) What kind of teaching experience do instructors have?
 4) Are there enough courses being offered in Fall 2026, and of all the right kinds?
 
@@ -19,7 +19,7 @@ I broke those questions down into the following, more specific competency questi
    a) Which Philosophy courses are offered in Fall 2026?
    b) Which Philosophy courses offered in Fall 2026 are online?
    c) Which Philosophy courses offered in Fall 2026 are in person?
-2) Which philosophy courses satisfying major distribution requirements?
+2) Which philosophy courses satisfy major distribution requirements?
    a) Which courses offered in a specified academic term satisfy the value-theory requirement?
    b) Which courses offered in a specified academic term satisfy the logic requirement?
    c) Which courses offered in a specified academic term satisfy the ancient and medieval history requirement?
@@ -38,10 +38,10 @@ I broke those questions down into the following, more specific competency questi
    h) How many experienced instructors do we have at UMass?
 4) Are there enough courses being offered in Fall 2026, and of all the right kinds?
    a) Does each major distribution requirement area have at least one course offered in a specified academic term?
-   b) Which distribution requirement area have no Fall 2026 course offerings?
+   b) Which distribution requirement area has no Fall 2026 course offerings?
    c) How many Fall 2026 course offerings satisfy each major distribution area?
 
-I then brainstormed potential classes and relationsthat would need to be created when building the ontology on top of BFO. These included:
+I then brainstormed potential classes and relations that would need to be created when building the ontology on top of BFO. These included:
 - Course
 - CourseOffering
 - Course Requirement
@@ -51,7 +51,7 @@ I also brainstormed the BFO/CCO classes that I could categorize these classes un
 See the .xlsx file labeled "UMass Ontology Planning and Data", tab "Competency Questions", for more details.
 
 ## Modeling Decisions
-I started added classes in Protege.
+Next, I started adding classes in Protege.
 
 I distinguished between a Course (like "Introduction to Ethics") and a particular Course Offering (like Section 01 of Introduction to Ethics taught by Kornblith in Fall 2026). I categorized Course as a Generically Dependent Continuant because its existence depends on (potentially multiple copies) of a particular course offering. On the other hand, I categorized Course Offering as a process, because it is something that unfolds over time. More specifically, it is an act of educational training instruction. Within the class Course, I created subclasses like Upper Division Course and Lower Division Course, Metaphysics and Epistemology Course, Value Theory Course, and so on.
 
@@ -67,7 +67,7 @@ I added a few object properties, like satisfiesCourseDistributionRequirement and
 Then, I scraped the UMass Philosophy course website for data on Course Codes, Course Titles, Academic Terms, and Course IDs.
 See the .xlsx file labeled "UMass Ontology Planning and Data", tab "Merged Data", for the entire data set. 
 
-I then organized and cleaned the data. I had to assign Instructor IDs to the instructors (e.g. Instructor 001), because many of the instructors had names with special characters that might cause problems in Protege. Similarly, I created IDs for courses, created names for course offerings, and sorted the courses into in-person and online.
+I then organized and cleaned the data. I had to assign Instructor IDs to the instructors (e.g., Instructor 001) because many of the instructors had names with special characters that might cause problems in Protege. Similarly, I created IDs for courses, created names for course offerings, and sorted the courses into in-person and online.
 
 Then, I used the [Cellfie](https://github.com/protegeproject/cellfie-plugin) plugin and [ROBOT](https://robot.obolibrary.org/) to import the data into Protege.
 
