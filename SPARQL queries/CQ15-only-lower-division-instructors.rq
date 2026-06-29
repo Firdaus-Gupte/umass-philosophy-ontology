@@ -1,0 +1,76 @@
+# CQ15: Which instructors have no upper-division teaching experience over the last 2 years?
+# Which instructors have taught a Philosophy course, but ONLY taught lower-division Philosophy courses, 
+# over the last two years, from Fall 2024 to Summer 2026?
+
+PREFIX umphil: <https://firdaus-gupte.github.io/umass-philosophy/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT DISTINCT ?InstructorName
+
+WHERE {
+
+ VALUES ?LastTwoYearTerm {
+  umphil:Summer2026
+  umphil:Spring2026
+  umphil:Winter2026
+  umphil:Fall2025
+  umphil:Summer2025
+  umphil:Spring2025
+  umphil:Winter2025
+  umphil:Fall2024
+  
+  }
+  
+  ?CourseOffering umphil:isOfferedInTerm ?LastTwoYearTerm ;
+    		umphil:isOfferingOf ?Course ;
+      		umphil:isTaughtBy ?InstructorPerson .
+  
+  
+  ?InstructorPerson rdfs:label ?InstructorName .
+            
+  
+  		
+
+ ?Course a umphil:PhilosophyCourse ;
+
+         umphil:hasCourseNumber ?CourseNumber .
+ 
+  FILTER NOT EXISTS {
+
+    VALUES ?NewLastTwoYearTerm {
+  umphil:Summer2026
+  umphil:Spring2026
+  umphil:Winter2026
+  umphil:Fall2025
+  umphil:Summer2025
+  umphil:Spring2025
+  umphil:Winter2025
+  umphil:Fall2024
+  
+  }
+  
+  ?UpperDivisionCourseOffering umphil:isOfferedInTerm ?NewLastTwoYearTerm ;
+    		umphil:isOfferingOf ?UpperDivisionCourse ;
+      		umphil:isTaughtBy ?InstructorPerson .
+  
+  
+  ?InstructorPerson rdfs:label ?InstructorName .
+            
+  
+  		
+
+ ?UpperDivisionCourse a umphil:PhilosophyCourse ;
+
+         umphil:hasCourseNumber ?UpperDivisionCourseNumber .
+
+    FILTER (?UpperDivisionCourseNumber >=300)
+
+  }
+  
+
+  
+
+  
+ 
+}
+ORDER BY ?InstructorName

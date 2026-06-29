@@ -1,0 +1,37 @@
+# CQ11: How many course offerings has each instructor taught over the last 2 years?
+
+PREFIX umphil: <https://firdaus-gupte.github.io/umass-philosophy/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT ?InstructorName (COUNT(DISTINCT ?CourseOffering) AS ?NumberOfOfferings )
+
+WHERE {
+
+  VALUES ?LastTwoYearTerm {
+  umphil:Summer2026
+  umphil:Spring2026
+  umphil:Winter2026
+  umphil:Fall2025
+  umphil:Summer2025
+  umphil:Spring2025
+  umphil:Winter2025
+  
+}
+  
+  ?CourseOffering umphil:isOfferedInTerm ?LastTwoYearTerm ;
+    		umphil:isOfferingOf ?Course ;
+      		umphil:isTaughtBy ?InstructorPerson .
+  
+  
+  ?InstructorPerson rdfs:label ?InstructorName .
+            
+  
+  		
+
+ ?Course a umphil:PhilosophyCourse .
+  
+  
+ 
+}
+GROUP BY ?InstructorPerson ?InstructorName
+ORDER BY DESC(?NumberOfOfferings) ?InstructorName

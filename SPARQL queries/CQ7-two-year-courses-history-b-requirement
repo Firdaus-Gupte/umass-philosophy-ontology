@@ -1,0 +1,34 @@
+# CQ7: Which Philosophy courses offered in the last two years satisfy the 17th and 18th Century History requirement? Which terms were they offered in?
+
+PREFIX umphil: <https://firdaus-gupte.github.io/umass-philosophy/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT DISTINCT ?CourseCode ?CourseTitle ?LastTwoYearTerm
+WHERE {
+  
+  VALUES ?LastTwoYearTerm {
+   umphil:Fall2026
+    umphil:Summer2026
+    umphil:Spring2026
+    umphil:Winter2026
+    umphil:Fall2025
+    umphil:Summer2025
+    umphil:Spring2025
+    umphil:Winter2025
+    
+    
+  }
+  
+  ?offering umphil:isOfferedInTerm ?LastTwoYearTerm ;
+            umphil:isOfferingOf ?Course .
+
+    
+  ?Course a umphil:PhilosophyCourse ;
+          rdfs:label ?CourseCode ;
+          umphil:satisfiesCourseDistributionRequirement umphil:HistoryBRequirement ;
+          umphil:hasCourseTitle ?CourseTitle .
+  
+
+ 
+}
+ORDER BY ?CourseCode ?LastTwoYearTerm

@@ -1,0 +1,34 @@
+# CQ8: Which Philosophy courses in the last two years satisfied the metaphysics and epistemology requirement?
+
+PREFIX umphil: <https://firdaus-gupte.github.io/umass-philosophy/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT DISTINCT ?CourseCode ?CourseTitle ?LastTwoYearTerm
+WHERE {
+  
+  VALUES ?LastTwoYearTerm {
+   umphil:Fall2026
+    umphil:Summer2026
+    umphil:Spring2026
+    umphil:Winter2026
+    umphil:Fall2025
+    umphil:Summer2025
+    umphil:Spring2025
+    umphil:Winter2025
+    
+    
+  }
+  
+  ?offering umphil:isOfferedInTerm ?LastTwoYearTerm ;
+            umphil:isOfferingOf ?Course .
+
+    
+  ?Course a umphil:PhilosophyCourse ;
+          rdfs:label ?CourseCode ;
+          umphil:satisfiesCourseDistributionRequirement umphil:MetaphysicsEpistemologyRequirement ;
+          umphil:hasCourseTitle ?CourseTitle .
+  
+
+ 
+}
+ORDER BY ?CourseCode ?LastTwoYearTerm

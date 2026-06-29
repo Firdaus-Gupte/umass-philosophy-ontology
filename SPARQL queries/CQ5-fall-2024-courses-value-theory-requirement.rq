@@ -1,0 +1,19 @@
+# CQ5: Which Philosophy courses offered in Fall 2024 satisfied the Value Theory requirement?
+
+PREFIX umphil: <https://firdaus-gupte.github.io/umass-philosophy/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT DISTINCT ?CourseCode ?CourseTitle 
+WHERE {
+  ?offering umphil:isOfferedInTerm umphil:Fall2024 ;
+            umphil:isOfferingOf ?Course .
+  
+  ?Course a umphil:PhilosophyCourse ;
+          rdfs:label ?CourseCode ;
+          umphil:satisfiesCourseDistributionRequirement umphil:ValueTheoryRequirement ;
+          umphil:hasCourseTitle ?CourseTitle .
+  
+
+ 
+}
+ORDER BY ?CourseCode

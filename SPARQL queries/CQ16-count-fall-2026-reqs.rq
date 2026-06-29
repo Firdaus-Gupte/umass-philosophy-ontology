@@ -1,0 +1,29 @@
+# CQ16: Do we have enough course variet in Fall 2026?
+# How many course offerings are there in Fall 2026 of each major distribution requirement?
+
+PREFIX umphil: <https://firdaus-gupte.github.io/umass-philosophy/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT ?Requirement (COUNT(DISTINCT ?CourseOffering) AS ?CourseOfferingCount)
+WHERE {
+  	
+VALUES ?Requirement {
+  umphil:MetaphysicsEpistemologyRequirement
+  umphil:LogicRequirement
+  umphil:HistoryARequirement
+  umphil:HistoryBRequirement
+  umphil:ValueTheoryRequirement
+}
+  
+OPTIONAL {
+  ?CourseOffering umphil:isOfferingOf ?Course ;
+                  umphil:isOfferedInTerm umphil:Fall2026 .
+  
+  ?Course a umphil:PhilosophyCourse ;
+                  umphil:satisfiesCourseDistributionRequirement ?Requirement .
+  
+  }
+}
+GROUP BY ?Requirement 
+ORDER BY DESC(?CourseOfferingCount)
+

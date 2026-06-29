@@ -1,0 +1,19 @@
+# CQ4: Which Philosophy courses in Spring 2025 satisfied the Logic requirement?
+
+PREFIX umphil: <https://firdaus-gupte.github.io/umass-philosophy/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT DISTINCT ?CourseCode ?CourseTitle 
+WHERE {
+  ?offering umphil:isOfferedInTerm umphil:Spring2025 ;
+            umphil:isOfferingOf ?Course .
+  
+  ?Course a umphil:PhilosophyCourse ;
+          rdfs:label ?CourseCode ;
+          umphil:satisfiesCourseDistributionRequirement umphil:LogicRequirement ;
+          umphil:hasCourseTitle ?CourseTitle .
+  
+
+ 
+}
+ORDER BY ?CourseCode

@@ -1,0 +1,25 @@
+# CQ10: Which courses in Fall 2026 are upper- and lower-division courses?
+
+PREFIX umphil: <https://firdaus-gupte.github.io/umass-philosophy/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT DISTINCT ?CourseTitle ?CourseNumber ?Division
+WHERE {
+
+  ?CourseOffering umphil:isOfferedInTerm umphil:Fall2026 ;
+            umphil:isOfferingOf ?Course .
+
+ ?Course a umphil:PhilosophyCourse ;
+            rdfs:label ?CourseCode ;
+            umphil:hasCourseTitle ?CourseTitle ;
+            umphil:hasCourseNumber ?CourseNumber .
+
+BIND (
+    IF(?CourseNumber >= 300, "Upper-Division Course", 
+    	"Lower-Division Course"
+  ) AS ?Division
+    
+  ) 
+ 
+}
+ORDER BY ?Division ?CourseNumber

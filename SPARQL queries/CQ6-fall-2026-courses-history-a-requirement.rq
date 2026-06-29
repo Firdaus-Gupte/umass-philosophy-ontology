@@ -1,0 +1,19 @@
+# CQ6: Which Philosophy courses offered in Fall 2026 satisfy the Ancient and Medieval History requirement?
+
+PREFIX umphil: <https://firdaus-gupte.github.io/umass-philosophy/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT DISTINCT ?CourseCode ?CourseTitle 
+WHERE {
+  ?offering umphil:isOfferedInTerm umphil:Fall2026 ;
+            umphil:isOfferingOf ?Course .
+  
+  ?Course a umphil:PhilosophyCourse ;
+          rdfs:label ?CourseCode ;
+          umphil:satisfiesCourseDistributionRequirement umphil:HistoryARequirement ;
+          umphil:hasCourseTitle ?CourseTitle .
+  
+
+ 
+}
+ORDER BY ?CourseCode
