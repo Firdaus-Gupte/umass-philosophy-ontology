@@ -56,7 +56,7 @@ Next, I started adding classes in Protege.
 
 I distinguished between a Course (like "Introduction to Ethics") and a particular Course Offering (like Section 01 of Introduction to Ethics taught by Kornblith in Fall 2026). I categorized Course as a Generically Dependent Continuant because its existence depends on (potentially multiple copies) of a particular course offering. On the other hand, I categorized Course Offering as a process, because it is something that unfolds over time. More specifically, it is an act of educational training instruction. Within the class Course, I created subclasses like Upper Division Course and Lower Division Course, Metaphysics and Epistemology Course, Value Theory Course, and so on.
 
-I added a few other relevant classes, like AcademicTerm, which I placed as a subclass of Temporal Interval, and InstructorPerson, which I placed as a subclass of Person.
+I added a few other relevant classes, like AcademicTerm and InstructorPerson.
 
 Then, I categorized Course Requirement as a Prescriptive Information Content Entity since it is an informational content entity that requires students to enroll in courses of certain kinds. I added axioms so that if a course satisfied a specific Course Requirement (say, the Logic Requirement), it would automatically be added to the appropriate class (e.g. Logic Course). 
 
