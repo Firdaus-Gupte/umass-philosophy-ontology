@@ -93,5 +93,5 @@ Finally, I wrote SPARQL queries to ask questions about the data, to answer the c
 - CQ15: Which instructors have no upper-division teaching experience over the last 2 years? (Which instructors have taught a Philosophy course, but ONLY taught lower-division Philosophy courses, over the last two years, from Fall 2024 to Summer 2026?)
 - CQ16: Do we have enough course variety in Fall 2026? (How many course offerings are there in Fall 2026 of each major distribution requirement?)
 
-Finally, I wrote a CONSTRUCT query that created new triples and a new class, Experienced Instructor, which contains all and only instructors that have taught at least 5 courses in the last 5 years.
+To end, I wrote a CONSTRUCT query that created new triples and a new class, Experienced Instructor, which contains all and only instructors that have taught at least 5 courses in the last 5 years.
 
